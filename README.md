@@ -1,16 +1,45 @@
 # KubecmdsViz
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+A visual interface for executing and visualizing kubectl commands, built with Angular and Express.js.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Interactive Command Templates**: Pre-configured kubectl commands organized by resource type
+- **Dynamic Resource Discovery**: Automatically loads namespaces, deployments, and pods
+- **Smart Output Parsing**: Visualizes tabular data, YAML, JSON, and events
+- **Accordion Sidebar**: Collapsible command categories like database explorers
+- **Namespace-aware**: Templates automatically use selected namespace
+
+## Quick Start
+
+### 1. Setup Kubernetes Test Environment
 
 ```bash
-ng serve
+bash scripts/cluster-setup.sh
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This will:
+- Create a kind cluster with multiple namespaces
+- Build and deploy test services
+- Set up sample pods and deployments
+
+### 2. Start the Application
+
+```bash
+npm run dev
+```
+
+This starts both frontend (Angular) and backend (Express) servers. Open `http://localhost:4200` to access the interface.
+
+> For detailed cluster setup instructions, see [cluster-setup-readme.md](./cluster-setup-readme.md)
+
+### 3. Cleanup Environment
+
+```bash
+bash scripts/cleanup.sh
+```
+
+This will safely remove the test cluster and optionally clean Docker images.
 
 ## Code scaffolding
 

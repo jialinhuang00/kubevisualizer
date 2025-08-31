@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
   --bg-primary: #0a0a0f;
@@ -20,7 +21,7 @@
 body {
   background: radial-gradient(ellipse at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   color: var(--text-primary);
-  font-family: 'Courier New', monospace;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
@@ -99,7 +100,7 @@ body::before {
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid var(--border-subtle);
   color: var(--accent-green);
-  font-family: 'Courier New', monospace;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
   white-space: pre-wrap;
   word-break: break-all;
 }
@@ -113,4 +114,42 @@ body::before {
   box-shadow: 
     0 0 5px var(--accent-cyan),
     inset 0 0 5px rgba(0, 212, 255, 0.1);
+}
+
+.compact-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.compact-table th,
+.compact-table td {
+  padding: 0.25rem 0.5rem;
+  line-height: 1.2;
+  vertical-align: top;
+}
+
+.compact-table th {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.compact-table td {
+  font-size: 0.75rem;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.compact-spacing {
+  line-height: 1.1;
+}
+
+select.cyber-button option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
